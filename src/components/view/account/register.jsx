@@ -2,15 +2,15 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import "../../css/login.css";
 import { register } from "../../../redux/action/user";
-import { Navigate, NavLink } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 class Register extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: null,
-      password: null,
-      redirect: false,
+      username: "",
+      password: "",
+      isRedirect: false,
       users: this.props.users,
     };
   }
@@ -29,29 +29,35 @@ class Register extends Component {
 
   register = () => {
     let { username, password, users } = this.state;
-    if (username) {
-      const checkUsername = users.some((el) => el.username === username);
-      if (checkUsername) {
-        alert("Tài khoản đã tồn tại");
-      } else {
-        this.props.REGISTER(username, password);
-        alert("Đăng ký thành công");
-        this.setState({
-          redirect: true,
-        });
-      }
+
+    const checkUsername = users.some((el) => el.username === username);
+
+    if (checkUsername) {
+      this.setState({
+        username: "",
+        password: "",
+      });
+      alert("Tài khoản đã tồn tại");
     } else {
-      alert("Tài khoản và mật khẩu không được để trống");
+      this.setState({
+        username: "",
+        password: "",
+        isRedirect: true,
+      });
+      this.props.REGISTER(username, password);
+      alert("Đăng ký thành công");
     }
   };
+
   UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({
-      redirect: nextProps.redirect,
+      users: nextProps.users,
     });
   }
+
   render() {
-    let { username, password, redirect } = this.state;
-    if (redirect) {
+    let { username, password, isRedirect } = this.state;
+    if (isRedirect) {
       return <Navigate to="/login" />;
     }
 

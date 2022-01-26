@@ -22,3 +22,10 @@
 .list-group-item {
   border: none;
 }
+.isUsers {
+  text-transform: capitalize;
+}
+.persional {
+  color: black;
+  text-decoration: none;
+}

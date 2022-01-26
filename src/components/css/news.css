@@ -1,6 +1,13 @@
 .news {
   position: relative;
 }
+.news .title-h3 {
+  margin: 10px 0;
+}
+.news a {
+  text-decoration: none;
+  color: black;
+}
 .news .group {
   border-bottom: 1px dotted;
   margin: 10px 0;
@@ -13,5 +20,5 @@
   white-space: pre-line;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 50px;
+  max-height: 70px;
 }

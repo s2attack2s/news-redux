@@ -1,10 +1,12 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { Route } from "react-router-dom";
-import RouterClient from "./router/client/router";
+import RouterClient from "./router/router";
 
 function App() {
-  return <RouterClient />;
+  return (
+    <>
+      <RouterClient />
+    </>
+  );
 }
 
 export default App;
