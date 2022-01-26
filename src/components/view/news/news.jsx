@@ -13,13 +13,18 @@ class News extends Component {
   changeTitle = (e) => {
     let tle = e.target.value;
     let PostFilter = this.props.posts;
-    let filterPosts;
-    filterPosts = PostFilter.filter((it) =>
+    let filterTitle, filterDetails;
+    filterTitle = PostFilter.filter((it) =>
       new RegExp(tle, "i").test(it.title)
     );
-    if (filterPosts) {
+    filterDetails = PostFilter.filter((it) =>
+      new RegExp(tle, "i").test(it.details)
+    );
+    if (filterTitle || filterDetails) {
+      let filterFilnal = [...filterTitle, ...filterDetails];
+      let posts = [...new Set(filterFilnal)];
       this.setState({
-        posts: filterPosts,
+        posts,
       });
     }
   };
