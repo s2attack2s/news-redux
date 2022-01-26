@@ -34,7 +34,7 @@ class News extends Component {
     return (
       <div className="news container">
         <div className="title-h3">
-          <p>Bài viết mới</p>{" "}
+          <h3>Tin tức</h3>{" "}
           <input
             type="text"
             placeholder="Tìm kiếm...."

@@ -1,4 +1,7 @@
-.contact {
+.contact h3 {
+  text-align: right;
+}
+.contact .content {
   margin: 40px auto;
   display: flex;
   flex-wrap: wrap;
@@ -7,7 +10,6 @@
 .contact .detail {
   width: calc(50% - 80px);
   margin: 0 20px;
-  min-width: 500px;
 }
 .contact .image img {
   width: 100%;
