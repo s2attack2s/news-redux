@@ -5,9 +5,12 @@
   align-items: center;
 }
 .contact .detail {
-  width: 50%;
+  width: calc(50% - 80px);
+  margin: 0 20px;
+  min-width: 500px;
 }
 .contact .image img {
+  width: 100%;
   border-radius: 15%;
 }
 .text-field {
@@ -37,4 +40,9 @@
   font-size: 14px;
   border: 1px solid #6a5af9;
   border-radius: 4px;
+}
+@media screen and (max-width: 768px) {
+  .contact .detail {
+    width: 100%;
+  }
 }

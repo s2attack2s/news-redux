@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Route, Routes, useParams } from "react-router-dom";
+import About from "../components/view/about/about";
 import Login from "../components/view/account/login";
 import Register from "../components/view/account/register";
 import Footer from "../components/view/footer/footer";
@@ -20,6 +21,7 @@ class RouterClient extends Component {
         <Routes>
           <Route path="/" element={<Home />} exact></Route>
           <Route path="/login" element={<Login />}></Route>
+          <Route path="/about" element={<About />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/write-content" element={<WriteContent />}></Route>
           <Route path="/news-details/:id" element={<RouteNewsDetails />} />

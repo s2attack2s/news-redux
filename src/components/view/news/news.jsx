@@ -20,7 +20,9 @@ class News extends Component {
     filterDetails = PostFilter.filter((it) =>
       new RegExp(tle, "i").test(it.details)
     );
-    if (filterTitle || filterDetails) {
+    let lengthTitle = filterTitle.length;
+    let lengthDetails = filterDetails.length;
+    if (lengthTitle > 0 || lengthDetails > 0) {
       let filterFilnal = [...filterTitle, ...filterDetails];
       let posts = [...new Set(filterFilnal)];
       this.setState({
