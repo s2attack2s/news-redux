@@ -45,7 +45,6 @@ class Login extends Component {
   };
 
   UNSAFE_componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
     this.setState({
       username: nextProps.username,
       isLogin: nextProps.isLogin,

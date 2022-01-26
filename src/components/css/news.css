@@ -3,6 +3,12 @@
 }
 .news .title-h3 {
   margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.news .title-h3 p {
+  font-size: 20px;
+  font-weight: 700;
 }
 .news a {
   text-decoration: none;

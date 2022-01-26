@@ -10,11 +10,31 @@ class News extends Component {
       posts: this.props.posts,
     };
   }
-
+  changeTitle = (e) => {
+    let tle = e.target.value;
+    let PostFilter = this.props.posts;
+    let filterPosts;
+    filterPosts = PostFilter.filter((it) =>
+      new RegExp(tle, "i").test(it.title)
+    );
+    if (filterPosts) {
+      this.setState({
+        posts: filterPosts,
+      });
+    }
+  };
   render() {
     return (
       <div className="news container">
-        <h3 className="title-h3">Bài viết mới</h3>
+        <div className="title-h3">
+          <p>Bài viết mới</p>{" "}
+          <input
+            type="text"
+            placeholder="Tìm kiếm...."
+            onChange={this.changeTitle}
+          />
+        </div>
+
         {this.state.posts.map((val, key) => (
           <ListNews key={key} value={val} id={key} />
         ))}
